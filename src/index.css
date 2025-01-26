@@ -24,6 +24,26 @@ body {
     --main-color: var(--bg-green);
 }
 
+.votes:nth-child(4) {
+    --main-color: red;
+}
+
+.votes:nth-child(5) {
+    --main-color: red;
+}
+
+.votes:nth-child(6) {
+    --main-color: red;
+}
+
+.votes:nth-child(7) {
+    --main-color: red;
+}
+
+.votes:nth-child(8) {
+    --main-color: red;
+}
+
 input:checked + label {
     border-color: var(--main-color);
 }

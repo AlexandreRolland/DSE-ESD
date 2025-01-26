@@ -24,13 +24,44 @@ export default function Question({ data }) {
                 votes_3: data.votes_3 + 1,
             });
         }
+        else if (selectedVote === data.answer_4) {
+            databases.updateDocument(DB_ID, COLLECTION_ID, data.$id, {
+                votes_4: data.votes_4 + 1,
+            });
+        }
+        else if (selectedVote === data.answer_5) {
+            databases.updateDocument(DB_ID, COLLECTION_ID, data.$id, {
+                votes_5: data.votes_5 + 1,
+            });
+        }
+        else if (selectedVote === data.answer_6) {
+            databases.updateDocument(DB_ID, COLLECTION_ID, data.$id, {
+                votes_6: data.votes_6 + 1,
+            });
+        }
+        else if (selectedVote === data.answer_7) {
+            databases.updateDocument(DB_ID, COLLECTION_ID, data.$id, {
+                votes_7: data.votes_7 + 1,
+            });
+        }
+        else if (selectedVote === data.answer_8) {
+            databases.updateDocument(DB_ID, COLLECTION_ID, data.$id, {
+                votes_8: data.votes_8 + 1,
+            });
+        }
 
         setIsSubmitted(true);
+
+        // Réactiver le bouton après 5 secondes
+        setTimeout(() => {
+            setIsSubmitted(false);
+        }, 5000);
+
     }
 
     if (!data) return null;
 
-    const totalVotes = data.votes_1 + data.votes_2 + data.votes_3;
+    const totalVotes = data.votes_1 + data.votes_2 + data.votes_3 + data.votes_4 + data.votes_5 + data.votes_6 + data.votes_7 + data.votes_8;
 
     return (
         <>
@@ -56,6 +87,36 @@ export default function Question({ data }) {
                     text={data.answer_3}
                     percentage={Math.floor((data.votes_3 / totalVotes) * 100)}
                     votes={data.votes_3}
+                />
+
+                <Vote
+                    text={data.answer_4}
+                    percentage={Math.floor((data.votes_4 / totalVotes) * 100)}
+                    votes={data.votes_4}
+                />
+
+                <Vote
+                    text={data.answer_5}
+                    percentage={Math.floor((data.votes_5 / totalVotes) * 100)}
+                    votes={data.votes_5}
+                />
+
+                <Vote
+                    text={data.answer_6}
+                    percentage={Math.floor((data.votes_6 / totalVotes) * 100)}
+                    votes={data.votes_6}
+                />
+
+                <Vote
+                    text={data.answer_7}
+                    percentage={Math.floor((data.votes_7 / totalVotes) * 100)}
+                    votes={data.votes_7}
+                />
+
+                <Vote
+                    text={data.answer_8}
+                    percentage={Math.floor((data.votes_8 / totalVotes) * 100)}
+                    votes={data.votes_8}
                 />
 
                 <button

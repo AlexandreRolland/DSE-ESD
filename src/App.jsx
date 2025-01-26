@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { client, databases, DB_ID, COLLECTION_ID } from "./lib/appwrite";
+import { Link } from "react-router-dom";
 import Question from "./components/Question";
 
 function App() {
@@ -45,6 +46,15 @@ function App() {
 
     return (
         <main className="container max-w-3xl mx-auto px-4 py-10">
+            <div className="flex justify-between items-center mb-6">
+                <h1 className="text-2xl font-bold">Questions</h1>
+                <Link
+                    to="/results"
+                    className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+                >
+                    Voir les résultats
+                </Link>
+            </div>
             {questions.map((question) => (
                 <Question key={question.$id} data={question} />
             ))}
