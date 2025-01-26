@@ -1,0 +1,146 @@
+.result-body{
+    width: 100%;
+    width: 100%;
+    padding: 30px 50px 30px 50px;
+    /* background-image: url(https://www.dkayu.fr/wp-content/uploads/2025/01/grid.png); */
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    min-height: 100vh;
+}
+
+h1{
+    text-align: center;
+    color: #fff;
+    font-family: CHANEY;
+    font-size: 96px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+h2{
+    color: #FFF;
+    font-family: "Silka Mono";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+}
+
+.results div{
+    gap: 0 !important;
+}
+
+.results-label{
+    color: #fff;
+    display: flex;
+    width: 100%;
+}
+
+.results-votes{
+width: 100%;
+}
+
+.result-text{
+    min-width: 200px;
+    color: #FFF;
+text-align: center;
+font-family: "Silka Mono";
+font-size: 32px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.result-progress-container{
+    width: 100%;
+}
+
+.result-progress{
+    width: 100%;
+    height: 40px;
+    border-radius: 25px;
+    margin-top: 10px;
+}
+
+.result-end-container{
+    max-width: 200px;
+    width: 100px;
+}
+
+.result-bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.result-bottom img{
+    max-width: 222px;
+    height: auto;
+    object-fit: contain;
+}
+
+.result-count{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.result-count span{
+    color: #FFF;
+text-align: center;
+font-family: "Silka Mono";
+font-size: 68px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+
+.result-count p{
+    color: #FFF;
+text-align: center;
+font-family: "Silka Mono";
+font-size: 32px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+text-transform: uppercase;
+}
+
+.result-date{
+    display: flex;
+    align-items: flex-end;
+}
+
+.result-date div{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.result-date p{
+    color: #FFF;
+text-align: center;
+font-family: "Silka Mono";
+font-size: 93.878px;
+font-style: normal;
+font-weight: 500;
+line-height: 86px;
+}
+
+.result-date > div p{
+    color: #FFF;
+    text-align: center;
+    font-family: "Silka Mono";
+    font-size: 35.204px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: right;
+}
+

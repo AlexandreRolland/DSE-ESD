@@ -3,7 +3,8 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import App from "./App";
 import VoteResults from "./VoteResults"; // Import de la nouvelle page
-import "./index.css";
+import "./lib/css/index.css";
+import "./lib/css/results.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>

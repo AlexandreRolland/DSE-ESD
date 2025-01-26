@@ -1,5 +1,5 @@
-import React from "react";
-import Vote from "./Vote";
+// Responses.js
+import Results from "./Results";
 
 export default function Responses({ data }) {
     if (!data) return null;
@@ -30,7 +30,7 @@ export default function Responses({ data }) {
             {options.map(
                 (option, index) =>
                     option.text && (
-                        <Vote
+                        <Results
                             key={index}
                             text={option.text}
                             percentage={Math.floor((option.votes / totalVotes) * 100)}

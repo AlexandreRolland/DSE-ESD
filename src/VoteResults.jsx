@@ -4,6 +4,7 @@ import Responses from "./components/Responses";
 
 export default function VoteResults() {
     const [questions, setQuestions] = useState([]);
+    const [totalVotes, setTotalVotes] = useState(0); // Ajout d'un state pour le total des votes
 
     useEffect(() => {
         getQuestionsFromDB();
@@ -28,21 +29,51 @@ export default function VoteResults() {
         };
     }, []);
 
+    // Fonction pour récupérer les questions depuis la base de données
     async function getQuestionsFromDB() {
         const questions = await databases.listDocuments(DB_ID, COLLECTION_ID);
         setQuestions(questions.documents);
     }
 
+    // Calcul du total des votes à partir des questions
+    useEffect(() => {
+        const total = questions.reduce((sum, question) => {
+            return sum + question.votes_1 + question.votes_2 + question.votes_3 +
+                question.votes_4 + question.votes_5 + question.votes_6 + question.votes_7 + question.votes_8;
+        }, 0);
+        setTotalVotes(total);
+    }, [questions]);
+
     return (
-        <main className="min-h-screen bg-gray-100 flex flex-col items-center py-10">
-            <h1 className="text-3xl font-bold mb-8 text-blue-600">Résultats des Votes</h1>
-            <div className="w-full max-w-3xl bg-white rounded-lg shadow-md p-6">
+        <main className="result-body">
+            <div>
+                <h1>RAPPORT</h1>
+                <h2>Résultats des analyses interdimensionnelles</h2>
+            </div>
+            <div>
                 {questions.map((question) => (
-                    <div key={question.$id} className="mb-6">
-                        <h2 className="text-2xl font-semibold mb-4">{question.text}</h2>
-                        <Responses data={question} />
+                    <div key={question.$id}>
+                        <div className="results">
+                            <Responses data={question} />
+                        </div>
                     </div>
                 ))}
+            </div>
+            <div className="result-bottom">
+                <img src="https://www.dkayu.fr/wp-content/uploads/2025/01/logo.png" alt="Logo" />
+
+                <div className="result-count">
+                    <span>{totalVotes}</span> {/* Affichage du total des votes */}
+                    <p>SONDÉS</p>
+                </div>
+
+                <div className="result-date">
+                    <div>
+                        <p>30</p>
+                        <p>JANVIER</p>
+                    </div>
+                    <p>2025</p>
+                </div>
             </div>
         </main>
     );

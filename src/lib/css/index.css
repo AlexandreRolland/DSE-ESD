@@ -9,7 +9,8 @@
 }
 
 body {
-    background: #eeeff3;
+    background: var(--rad, radial-gradient(79.03% 111.95% at 50% 50%, #2F4EAA 0%, #241F58 100%));
+
 }
 
 .votes:nth-child(1) {
