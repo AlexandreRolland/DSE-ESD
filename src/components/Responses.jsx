@@ -33,7 +33,7 @@ export default function Responses({ data }) {
                         <Results
                             key={index}
                             text={option.text}
-                            percentage={Math.floor((option.votes / totalVotes) * 100)}
+                            percentage={Math.floor((option.votes / totalVotes) * 300)}
                             votes={option.votes}
                         />
                     )

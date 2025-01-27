@@ -1,0 +1,93 @@
+.question-container h1 {
+    color: #FFF;
+    text-align: center;
+    font-family: CHANEY;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 30px;
+}
+
+.question-titles{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.question-container h2 {
+    color: #FFF;
+    text-align: center;
+    font-family: "Silka Mono";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    max-width: 70%;
+}
+
+.question-grid-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colonnes de tailles égales */
+    gap: 20px; /* Espacement entre les éléments */
+    padding: 20px;
+}
+
+.question-votes-container-container{
+    display: flex;
+    justify-content: center;
+}
+
+.question-votes-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colonnes de tailles égales */
+    gap: 20px; /* Espacement entre les éléments */
+    padding: 20px;
+    max-width: 60%;
+
+}
+
+.question-vote-container{
+    padding: 10px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='197' viewBox='0 0 120 197' fill='none'%3E%3Cpath d='M0 22.8406L120 0V174.159L0 197V22.8406Z' fill='white'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 150%;
+    background-position: center;
+    overflow: visible;
+
+}
+
+.question-vote-container::before{
+    background-size: 150%;
+}
+
+.question-votes{
+    width: 150px;
+    max-width: fit-content;
+    padding: 0;
+}
+
+.question-votes p{
+    color: var(--Bleu-fonc, #212E6B);
+text-align: center;
+font-family: "Silka Mono";
+font-size: 40px;
+font-style: normal;
+font-weight: 700;
+line-height: 98%; /* 39.2px */
+text-align: center;
+}
+
+.question-votes span{
+    color: var(--Bleu-fonc, #212E6B);
+    text-align: center;
+    font-family: "Silka Mono";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 22.5px */
+    text-transform: uppercase; 
+    text-align: center;
+}

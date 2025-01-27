@@ -1,17 +1,38 @@
-.result-body{
-    width: 100%;
-    width: 100%;
-    padding: 30px 50px 30px 50px;
-    /* background-image: url(https://www.dkayu.fr/wp-content/uploads/2025/01/grid.png); */
+.result-grid {
+    min-height: 100vh;
+
+    min-width: 100%;
+    min-height: 100vh;
     background-repeat: no-repeat;
     background-size: contain;
-    display: flex;
-    flex-direction: column;
-    justify-content:space-between;
-    min-height: 100vh;
+    background: var(--rad, radial-gradient(79.03% 111.95% at 50% 50%, #2F4EAA 0%, #241F58 100%));
+    background-image: linear-gradient(rgba(255, 255, 255, .4) .1em, transparent .1em), linear-gradient(90deg, rgba(255, 255, 255, .4) .1em, transparent .1em);
+    background-size: 3em 3em;
 }
 
-h1{
+.result-body {
+    width: 100%;
+    width: 100%;
+    padding: 0px 50px 25px 50px;
+    /* background-image: url(https://www.dkayu.fr/wp-content/uploads/2025/01/grid.png); */
+    min-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.result-video {
+    position: fixed;
+    min-height: 100vh;
+    min-width: 100vw;
+    opacity: 0.2;
+    z-index: 10;
+}
+
+
+h1 {
     text-align: center;
     color: #fff;
     font-family: CHANEY;
@@ -21,119 +42,145 @@ h1{
     line-height: normal;
 }
 
-h2{
+h2 {
     color: #FFF;
     font-family: "Silka Mono";
-    font-size: 40px;
+    font-size: 30px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     text-align: center;
 }
 
-.results div{
+.results div {
     gap: 0 !important;
 }
 
-.results-label{
+.results-label {
     color: #fff;
     display: flex;
     width: 100%;
 }
 
-.results-votes{
-width: 100%;
+.result-container {
+    padding: 10px 0 10px 0;
 }
 
-.result-text{
-    min-width: 200px;
-    color: #FFF;
-text-align: center;
-font-family: "Silka Mono";
-font-size: 32px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-}
-
-.result-progress-container{
+.results-votes {
     width: 100%;
 }
 
-.result-progress{
+.result-text {
+    min-width: 200px;
+    color: #FFF;
+    text-align: center;
+    font-family: "Silka Mono";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.result-progress-container {
+    width: 100%;
+    display: flex;
+}
+
+.result-progress {
     width: 100%;
     height: 40px;
     border-radius: 25px;
     margin-top: 10px;
+    display: flex;
+    align-items: center;
 }
 
-.result-end-container{
-    max-width: 200px;
-    width: 100px;
+.result-progress::before {
+    content: "";
+    display: block;
+    height: 140%;
+    width: 13px;
+    border-radius: 5px;
+    background-color: #CC4C26;
 }
 
-.result-bottom{
+.result-end-container {
+    max-width: 30px;
+    width: 30px;
+}
+
+.result-bottom {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    max-width: 100%;
+    width: 100vw;
 }
 
-.result-bottom img{
+.result-img-container{
+    width: 400px;
+}
+
+.result-bottom img {
     max-width: 222px;
     height: auto;
     object-fit: contain;
+    margin-bottom: 5px;
+    margin-left: 6px;
 }
 
-.result-count{
+.result-count {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.result-count span{
+.result-count span {
     color: #FFF;
-text-align: center;
-font-family: "Silka Mono";
-font-size: 68px;
-font-style: normal;
-font-weight: 600;
-line-height: normal;
+    text-align: center;
+    font-family: "Silka Mono";
+    font-size: 68px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 70px;
 }
 
-.result-count p{
+.result-count p {
     color: #FFF;
-text-align: center;
-font-family: "Silka Mono";
-font-size: 32px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-text-transform: uppercase;
+    text-align: center;
+    font-family: "Silka Mono";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
 }
 
-.result-date{
+.result-date {
     display: flex;
     align-items: flex-end;
+    justify-content: flex-end;
+    width: 450px;
 }
 
-.result-date div{
+.result-date div {
     display: flex;
     flex-direction: column;
-    
+
 }
 
-.result-date p{
+.result-date p {
     color: #FFF;
-text-align: center;
-font-family: "Silka Mono";
-font-size: 93.878px;
-font-style: normal;
-font-weight: 500;
-line-height: 86px;
+    text-align: center;
+    font-family: "Silka Mono";
+    font-size: 93.878px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 86px;
 }
 
-.result-date > div p{
+.result-date>div p {
     color: #FFF;
     text-align: center;
     font-family: "Silka Mono";
@@ -144,3 +191,52 @@ line-height: 86px;
     text-align: right;
 }
 
+.progress-wrapper {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    /* Même hauteur que la barre */
+    display: flex;
+    align-items: center;
+}
+
+.result-progress {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Couleur du fond de la barre */
+    position: relative;
+    z-index: 1;
+}
+
+.result-progress::-webkit-progress-value {
+    background-color: var(--main-color);
+    /* Couleur de la progression */
+    border-radius: 0 5px 5px 0;
+}
+
+.progress-percentage {
+    position: absolute;
+    left: calc(var(--progress-value, 0) * 1%);
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    margin-left: 60px;
+    white-space: nowrap;
+    pointer-events: none;
+
+    color: #FFF;
+    text-align: center;
+    font-family: "Silka Mono";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 5px;
+    line-height: 10px;
+
+}
+
+.progress-percentage div{
+    font-size:15px;
+    margin-top: 15px;
+}

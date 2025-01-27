@@ -64,12 +64,10 @@ export default function Question({ data }) {
     const totalVotes = data.votes_1 + data.votes_2 + data.votes_3 + data.votes_4 + data.votes_5 + data.votes_6 + data.votes_7 + data.votes_8;
 
     return (
-        <>
-            <h2 className="text-3xl text-center font-bold">{data.text}</h2>
-
+        <div className="question-votes-container-container">
             <form
                 onSubmit={handleSubmit}
-                className="flex flex-col gap-4 votes-container"
+                className="flex flex-col gap-4 question-votes-container"
             >
                 <Vote
                     text={data.answer_1}
@@ -122,11 +120,11 @@ export default function Question({ data }) {
                 <button
                     type="submit"
                     disabled={isSubmitted}
-                    className="cursor-pointer ml-auto my-6 rounded shadow bg-green-400 text-white font-medium text-lg py-2 px-10 transition hover:bg-white hover:text-green-400 disabled:cursor-not-allowed disabled:bg-gray-400 disabled:text-gray-100"
+                    className="cursor-pointer ml-auto my-6 rounded shadow bg-green-400  font-medium text-lg py-2 px-10 transition  hover:text-green-400 disabled:cursor-not-allowed disabled:bg-gray-400 disabled:text-gray-100"
                 >
                     Submit your vote
                 </button>
             </form>
-        </>
+        </div>
     );
 }

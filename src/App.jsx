@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { client, databases, DB_ID, COLLECTION_ID } from "./lib/appwrite";
 import { Link } from "react-router-dom";
 import Question from "./components/Question";
+import "./lib/css/questions.css";
 
 function App() {
     const [questions, setQuestions] = useState([]);
@@ -45,20 +46,28 @@ function App() {
     }
 
     return (
-        <main className="container max-w-3xl mx-auto px-4 py-10">
-            <div className="flex justify-between items-center mb-6">
-                <h1 className="text-2xl font-bold">Questions</h1>
-                <Link
-                    to="/results"
-                    className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
-                >
-                    Voir les résultats
-                </Link>
-            </div>
-            {questions.map((question) => (
-                <Question key={question.$id} data={question} />
-            ))}
-        </main>
+        <div className="result-grid question-container">
+            {/* <video autoPlay muted loop className="result-video" src="https://www.dkayu.fr/wp-content/uploads/2025/01/0127.mp4"></video> */}
+            <main className="result-body" >
+                <div className="question-titles">
+                        <h1>RAPPORT</h1>
+                        <h2>Pour terminer votre rapport d’enquête merci de sélectionner 
+                        la porte responsable des anomalies dans l’entreprise :</h2>
+                    </div>
+                {questions.map((question) => (
+                    <Question key={question.$id} data={question} />
+                ))}
+                <div className="flex justify-between items-center mb-6">
+                    <h3 className="text-2xl font-bold">Questions</h3>
+                    <Link 
+                        to="/results"
+                        className=" question-grid-container bg-blue-500 px-4 py-2 rounded-lg hover:bg-blue-600"
+                    >
+                        Voir les résultats
+                    </Link>
+                </div>
+            </main>
+        </div>
     );
 }
 

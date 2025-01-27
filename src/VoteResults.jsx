@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { client, databases, DB_ID, COLLECTION_ID } from "./lib/appwrite";
 import Responses from "./components/Responses";
 
+
 export default function VoteResults() {
     const [questions, setQuestions] = useState([]);
     const [totalVotes, setTotalVotes] = useState(0); // Ajout d'un state pour le total des votes
@@ -45,36 +46,41 @@ export default function VoteResults() {
     }, [questions]);
 
     return (
-        <main className="result-body">
-            <div>
-                <h1>RAPPORT</h1>
-                <h2>Résultats des analyses interdimensionnelles</h2>
-            </div>
-            <div>
-                {questions.map((question) => (
-                    <div key={question.$id}>
-                        <div className="results">
-                            <Responses data={question} />
+        <div className="result-grid">
+            <video autoPlay muted loop className="result-video" src="https://www.dkayu.fr/wp-content/uploads/2025/01/0127.mp4"></video>
+            <main className="result-body">
+                <div className="result-tv-filter"></div>
+                <div>
+                    <h1>RAPPORT</h1>
+                    <h2>Résultats des analyses interdimensionnelles</h2>
+                </div>
+                <div>
+                    {questions.map((question) => (
+                        <div key={question.$id}>
+                            <div className="results">
+                                <Responses data={question} />
+                            </div>
                         </div>
-                    </div>
-                ))}
-            </div>
-            <div className="result-bottom">
-                <img src="https://www.dkayu.fr/wp-content/uploads/2025/01/logo.png" alt="Logo" />
-
-                <div className="result-count">
-                    <span>{totalVotes}</span> {/* Affichage du total des votes */}
-                    <p>SONDÉS</p>
+                    ))}
                 </div>
-
-                <div className="result-date">
-                    <div>
-                        <p>30</p>
-                        <p>JANVIER</p>
+                <div className="result-bottom">
+                    <div className="result-img-container">
+                        <img src="https://www.dkayu.fr/wp-content/uploads/2025/01/logo.png" alt="Logo" />
                     </div>
-                    <p>2025</p>
+                    <div className="result-count">
+                        <span>{totalVotes}</span> {/* Affichage du total des votes */}
+                        <p>SONDÉS</p>
+                    </div>
+
+                    <div className="result-date">
+                        <div>
+                            <p>30</p>
+                            <p>JANVIER</p>
+                        </div>
+                        <p>2025</p>
+                    </div>
                 </div>
-            </div>
-        </main>
+            </main>
+        </div>
     );
 }

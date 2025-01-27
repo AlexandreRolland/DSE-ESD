@@ -6,6 +6,7 @@ import VoteResults from "./VoteResults"; // Import de la nouvelle page
 import "./lib/css/index.css";
 import "./lib/css/results.css";
 
+
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
         <Router>

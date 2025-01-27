@@ -1,33 +1,38 @@
-// Results.js
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 export default function Results({ text, percentage, votes }) {
-    return (
-        <div className="votes ">
-            <label
-                htmlFor={text}
-                className=" flex block rounded border-4 border-transparent cursor-pointer  p-6"
-            >
-                <p className="result-text text-2xl font-bold flex items-center justify-between">
-                    {text}
+  const progressRef = useRef(null);
 
-                </p>
-                <div className="result-progress-container">
-                    <progress
-                        className=" result-progress w-full h-2 mt-4 [&::-webkit-progress-bar] [&::-webkit-progress-value]"
-                        value={percentage}
-                        max="100"
-                    >
-                        {percentage}%
-                    </progress>
-                </div>
-                <div className="result-end-container">
-                    <p className="text-2xl font-bold flex items-center justify-between">
-                        <span>{percentage || 0}%</span>
-                    </p>
-                </div>
-                <small className="text-slate-500">{votes} votes</small>
-            </label>
+  useEffect(() => {
+    if (progressRef.current) {
+      const value = percentage || 0;
+      progressRef.current.style.setProperty("--progress-value", value);
+    }
+  }, [percentage]);
+
+  return (
+    <div className="votes">
+      <label
+        htmlFor={text}
+        className="result-container flex block rounded border-4 border-transparent cursor-pointer"
+      >
+        <p className="result-text text-2xl font-bold flex items-center justify-between">
+          {text}
+        </p>
+        <div className="result-progress-container">
+          <div className="progress-wrapper" ref={progressRef}>
+            <progress
+              className="result-progress"
+              value={percentage}
+              max="100"
+            ></progress>
+            <span className="progress-percentage">{votes} <div>Votes</div></span>
+          </div>
         </div>
-    );
+        <div className="result-end-container">
+        </div>
+
+      </label>
+    </div>
+  );
 }

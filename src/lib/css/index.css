@@ -14,35 +14,35 @@ body {
 }
 
 .votes:nth-child(1) {
-    --main-color: var(--bg-blue);
+    --main-color: #fff;
 }
 
 .votes:nth-child(2) {
-    --main-color: var(--bg-red);
+    --main-color: #fff;
 }
 
 .votes:nth-child(3) {
-    --main-color: var(--bg-green);
+    --main-color: #fff;
 }
 
 .votes:nth-child(4) {
-    --main-color: red;
+    --main-color: #fff;
 }
 
 .votes:nth-child(5) {
-    --main-color: red;
+    --main-color: #fff;
 }
 
 .votes:nth-child(6) {
-    --main-color: red;
+    --main-color: #fff;
 }
 
 .votes:nth-child(7) {
-    --main-color: red;
+    --main-color: #fff;
 }
 
 .votes:nth-child(8) {
-    --main-color: red;
+    --main-color: #FFF;
 }
 
 input:checked + label {
@@ -50,7 +50,7 @@ input:checked + label {
 }
 
 progress::-webkit-progress-bar {
-    background: #cbd5e1;
+    background: rgba(0, 0, 0, 0.0) !important;
     border-radius: 0.5rem;
 }
 
