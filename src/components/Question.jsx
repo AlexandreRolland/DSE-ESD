@@ -67,8 +67,9 @@ export default function Question({ data }) {
         <div className="question-votes-container-container">
             <form
                 onSubmit={handleSubmit}
-                className="flex flex-col gap-4 question-votes-container"
+                className=" gap-4 question-votes-container "
             >
+                <div className="question-grid-container">
                 <Vote
                     text={data.answer_1}
                     percentage={Math.floor((data.votes_1 / totalVotes) * 100)}
@@ -116,14 +117,16 @@ export default function Question({ data }) {
                     percentage={Math.floor((data.votes_8 / totalVotes) * 100)}
                     votes={data.votes_8}
                 />
-
-                <button
-                    type="submit"
-                    disabled={isSubmitted}
-                    className="cursor-pointer ml-auto my-6 rounded shadow bg-green-400  font-medium text-lg py-2 px-10 transition  hover:text-green-400 disabled:cursor-not-allowed disabled:bg-gray-400 disabled:text-gray-100"
-                >
-                    Submit your vote
-                </button>
+                </div>
+                <div className="question-btn-container">
+                    <button
+                        type="submit"
+                        disabled={isSubmitted}
+                        className="cursor-pointer disabled:cursor-not-allowed disabled:bg-gray-400 disabled:text-gray-100"
+                    >
+                        Valider mon choix
+                    </button>
+                </div>
             </form>
         </div>
     );
