@@ -5,7 +5,6 @@ import App from "./App";
 import VoteResults from "./VoteResults"; // Import de la nouvelle page
 import "./lib/css/index.css";
 import "./lib/css/results.css";
-import "./assets/index.css";
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
