@@ -1,12 +1,13 @@
 *{
     box-sizing: border-box;
+    border: 1px solid red;
 }
 
 
 
 .question-container{
-
- 
+padding: 0;
+ max-width: 100vw;
 }
 
 .question-container h1 {
@@ -17,7 +18,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 .question-titles{
@@ -35,7 +36,7 @@
     font-family: "Silka Mono";
     font-size: 28px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     line-height: normal;
     max-width: 70%;
 }
@@ -43,7 +44,7 @@
 .question-grid-container{
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 colonnes de tailles égales */
-    gap: 20px; /* Espacement entre les éléments */
+    gap: 60px; /* Espacement entre les éléments */
     padding: 20px;
 }
 
@@ -59,6 +60,7 @@
     flex-direction: column;
     justify-content: space-between;
     height:75vh;
+    box-sizing: border-box;
 
 }
 
@@ -75,12 +77,59 @@
 
 }
 
+.question-votes label > span{
+    text-align: center;
+    display: flex;
+    margin-top: 10px;
+}
+
+input[type="radio"] + label {
+    position: relative; /* Nécessaire pour positionner le pseudo-élément */
+    display: inline-block;
+    padding: 10px; /* Espace interne du label */
+    border: 10px solid transparent !important; /* La bordure par défaut (vide) */
+    box-sizing: border-box;
+    cursor: pointer; /* Optionnel pour indiquer que c'est cliquable */
+    transition: all 0.3s;
+}
+
+input[type="radio"] + label::before {
+    content: "";
+    position: absolute;
+    top: -20px; /* Décalage pour créer l'espace transparent */
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    border: 5px solid transparent; /* Couche de "vide" */
+    background-color: transparent; /* Espace transparent */
+    z-index: -1; /* Envoyer derrière le label */
+    transition: all 0.3s;
+}
+
+input[type="radio"]:checked + label::before {
+    border-color: white; /* Couleur de la bordure au clic */
+    border-radius: 5px;
+}
+
+
 
 
 .question-votes{
     width: 150px;
     max-width: fit-content;
     padding: 0;
+}
+
+.question-votes > span{
+    display: block;
+    position: absolute;
+    color: #b50808;
+    font-size: 60px;
+    z-index: 30;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform: skew(-5deg);
 }
 
 .question-votes p{
@@ -111,6 +160,7 @@ text-align: center;
     justify-content: center;
     margin-top: 20px;
     width: 100%;
+    position: relative;
 }
 
 .question-btn-container button{
@@ -121,7 +171,7 @@ padding: 30px 70px;
 height: fit-content;
 display: inline-block;
 z-index: 9;
-position: relative;
+
 
 
 color: var(--Bleu-fonc, #212E6B);
@@ -140,6 +190,20 @@ transform: skew(-5deg);
     transition: 0.3s;
 }
 
+.question-btn-container button::before{
+    content: "•";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #2F4EAA;
+    font-size: 30px;
+    top: 25%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    transform: skew(-5deg);
+}
+
 .question-bottom{
     position: absolute;
     bottom: 0;
@@ -147,14 +211,15 @@ transform: skew(-5deg);
     justify-content: space-between;
     align-items: flex-end;
     width: 100%;
-    padding: 0 50px 20px 50px;
+    padding: 0 50px 0px 50px;
+    margin-bottom: 15px;
 }
 
 .question-bottom-left{
     height: fit-content;
     width: fit-content;
     width: 200px;
- 
+    margin-bottom: 20px;
 }
 
 .question-bottom-right{
@@ -167,7 +232,22 @@ transform: skew(-5deg);
 .question-map-btn{
     width: fit-content;
     background-color: white;
-    padding: 10px 15px;
+    padding: 20px 20px 20px 25px;
+
+    transform: skew(-5deg);
+}
+
+.question-map-btn::before{
+    content: "•";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #2F4EAA;
+    font-size: 30px;
+    top: 25%;
+    left: 0;
+    transform: translate(-50%, -50%);
     transform: skew(-5deg);
 }
 
@@ -176,4 +256,23 @@ transform: skew(-5deg);
     height: auto;
     max-width: fit-content;
 
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 10px;
 }

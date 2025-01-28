@@ -70,53 +70,61 @@ export default function Question({ data }) {
                 className=" gap-4 question-votes-container "
             >
                 <div className="question-grid-container">
-                <Vote
-                    text={data.answer_1}
-                    percentage={Math.floor((data.votes_1 / totalVotes) * 100)}
-                    votes={data.votes_1}
-                />
+                    <Vote
+                        text={data.answer_1}
+                        atelier="Design Interaction"
+                        percentage={Math.floor((data.votes_1 / totalVotes) * 100)}
+                        votes={data.votes_1}
+                    />
 
-                <Vote
-                    text={data.answer_2}
-                    percentage={Math.floor((data.votes_2 / totalVotes) * 100)}
-                    votes={data.votes_2}
-                />
+                    <Vote
+                        text={data.answer_2}
+                        atelier="Design Interaction"
+                        percentage={Math.floor((data.votes_2 / totalVotes) * 100)}
+                        votes={data.votes_2}
+                    />
 
-                <Vote
-                    text={data.answer_3}
-                    percentage={Math.floor((data.votes_3 / totalVotes) * 100)}
-                    votes={data.votes_3}
-                />
+                    <Vote
+                        text={data.answer_3}
+                        atelier="Design Interaction"
+                        percentage={Math.floor((data.votes_3 / totalVotes) * 100)}
+                        votes={data.votes_3}
+                    />
 
-                <Vote
-                    text={data.answer_4}
-                    percentage={Math.floor((data.votes_4 / totalVotes) * 100)}
-                    votes={data.votes_4}
-                />
+                    <Vote
+                        text={data.answer_4}
+                        atelier="Immersive Game"
+                        percentage={Math.floor((data.votes_4 / totalVotes) * 100)}
+                        votes={data.votes_4}
+                    />
 
-                <Vote
-                    text={data.answer_5}
-                    percentage={Math.floor((data.votes_5 / totalVotes) * 100)}
-                    votes={data.votes_5}
-                />
+                    <Vote
+                        text={data.answer_5}
+                        atelier="Game Design"
+                        percentage={Math.floor((data.votes_5 / totalVotes) * 100)}
+                        votes={data.votes_5}
+                    />
 
-                <Vote
-                    text={data.answer_6}
-                    percentage={Math.floor((data.votes_6 / totalVotes) * 100)}
-                    votes={data.votes_6}
-                />
+                    <Vote
+                        text={data.answer_6}
+                        atelier="Expérience Vr"
+                        percentage={Math.floor((data.votes_6 / totalVotes) * 100)}
+                        votes={data.votes_6}
+                    />
 
-                <Vote
-                    text={data.answer_7}
-                    percentage={Math.floor((data.votes_7 / totalVotes) * 100)}
-                    votes={data.votes_7}
-                />
+                    <Vote
+                        text={data.answer_7}
+                        atelier="Court Métrage"
+                        percentage={Math.floor((data.votes_7 / totalVotes) * 100)}
+                        votes={data.votes_7}
+                    />
 
-                <Vote
-                    text={data.answer_8}
-                    percentage={Math.floor((data.votes_8 / totalVotes) * 100)}
-                    votes={data.votes_8}
-                />
+                    <Vote
+                        text={data.answer_8}
+                        atelier='Data Art & Unreal'
+                        percentage={Math.floor((data.votes_8 / totalVotes) * 100)}
+                        votes={data.votes_8}
+                    />
                 </div>
                 <div className="question-btn-container">
                     <button
