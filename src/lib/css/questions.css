@@ -206,21 +206,19 @@ transform: skew(-5deg);
 }
 
 .question-bottom{
-    position: absolute;
-    bottom: 0;
+    margin-top: -50px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     width: 100%;
     padding: 0 50px 0px 50px;
-    margin-bottom: 15px;
 }
 
 .question-bottom-left{
     height: fit-content;
     width: fit-content;
     width: 200px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 
 .question-bottom-right{
